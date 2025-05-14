@@ -22,9 +22,21 @@ print(df['fuma'].unique())
 
 #punto 3
 
-# df = df.drop_duplicates()
+df = df.drop_duplicates()
 
-# columnas_corregidas = ['peso', 'talla', 'glucosa', 'colesterol']
-# df = df.dropna(subset=columnas_corregidas)
+#punto 4
 
-# df['mes'] = df['fecha_de_tamizaje'].dt.month
+columnas_corregidas = ['peso', 'talla', 'glucosa', 'colesterol']
+df = df.dropna(subset=columnas_corregidas)
+
+#punto 5
+df['fuma'] = df['fuma'].str.lower().str.strip()
+df['fuma'] = df['fuma'].replace({
+    'sí': True, 'si': True, 'fuma': True,
+    'no': False, 'desconocido': False, 'nunca': False, 'no fuma': False
+})
+
+#punto 6
+df['fecha'] = pd.to_datetime(df['fecha'], dayfirst=True, errors='coerce')
+df['mes'] = df['fecha'].dt.month
+
