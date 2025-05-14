@@ -46,7 +46,7 @@ print(df['mes'])
 
 #Punto 7
 
-df['imc'] = df['peso'] / (df['talla']) ** 2
+df['imc'] = df['peso'] / (df['talla'])** 2
 
 #Punto 8
 def clasificar_imc(imc):
