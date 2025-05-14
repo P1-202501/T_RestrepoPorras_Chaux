@@ -22,9 +22,9 @@ print(df['fuma'].unique())
 
 #punto 3
 
-df = df.drop_duplicates()
+# df = df.drop_duplicates()
 
-columnas_corregidas = ['peso', 'talla', 'glucosa', 'colesterol']
-df = df.dropna(subset=columnas_corregidas)
+# columnas_corregidas = ['peso', 'talla', 'glucosa', 'colesterol']
+# df = df.dropna(subset=columnas_corregidas)
 
-df['mes'] = df['fecha_de_tamizaje'].dt.month
+# df['mes'] = df['fecha_de_tamizaje'].dt.month
